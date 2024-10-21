@@ -1,0 +1,11 @@
+package Learnjava;
+
+public class prgrmone {
+	@Test
+	public void demo()
+	{
+		System.out.println("Hello");
+	}
+	
+
+}

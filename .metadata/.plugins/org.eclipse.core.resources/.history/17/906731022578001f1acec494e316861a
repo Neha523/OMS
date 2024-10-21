@@ -1,0 +1,11 @@
+package lrntstng;
+
+import org.testng.annotations.Test;
+
+public class prgm1 {
+
+	public void demo()
+	{
+		System.out.println("Hello Tester");
+	}
+}

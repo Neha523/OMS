@@ -1,0 +1,28 @@
+package bpbprgm1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Synchronization {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method 
+
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("http://practice.bpbonline.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.findElement(By.linkText("log yourself in")).click();
+		 driver.findElement(By.xpath("//input[@name='email_address']")).sendKeys("admin@admin.com");
+	     driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin@123");
+	     driver.findElement(By.xpath("//button[normalize-space(text())='Sign In']")).click();
+
+	}
+
+}

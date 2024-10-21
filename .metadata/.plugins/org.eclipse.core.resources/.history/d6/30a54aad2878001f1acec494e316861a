@@ -1,0 +1,11 @@
+package lrntstng;
+
+
+
+public class prgm1 {
+
+	public void demo()
+	{
+		System.out.println("Hello Tester");
+	}
+}

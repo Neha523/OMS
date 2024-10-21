@@ -1,0 +1,10 @@
+package Programs;
+
+public class tsngday1 {
+	
+	public void demo()
+	{
+		System.out.println("test");
+	}
+
+}

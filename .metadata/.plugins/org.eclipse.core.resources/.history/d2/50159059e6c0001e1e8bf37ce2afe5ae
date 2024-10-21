@@ -1,0 +1,54 @@
+package Learnjava;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+public class rnd {
+	
+	public static void main(String[] args) throws InterruptedException 
+	{
+	WebDriverManager.chromedriver().avoidBrowserDetection().setup();
+	ChromeOptions options = new ChromeOptions();
+	options.addArguments("--remote-allow-origins=*");
+	WebDriver driver = new ChromeDriver(options);
+	driver.get("https://prota.medikacloud.com/login");
+	driver.findElement(By.xpath("(//input[@type='text'])[1]")).sendKeys("prota@medikacloud.com");
+	driver.findElement(By.xpath("//input[@type='password']")).sendKeys("medika@1234");
+	driver.findElement(By.xpath("//button[@class='button-brandisBlue button-properties ']")).click();
+	Thread.sleep(1000);
+	driver.manage().window().maximize();
+	/*driver.findElement(By.xpath("//span[@class='center']//*[name()='svg']")).click();
+	driver.findElement(By.xpath("//a[normalize-space()='Current Inventory']")).click();t-multi-carousel-item react-multi-carousel-item--active ']//button[@class='next-button']//*[name()='svg']")).click();*/
+	driver.findElement(By.xpath("//p[normalize-space()='Create PO']")).click();
+	driver.findElement(By.xpath("//p[normalize-space()='Select Supplier']")).click();
+	Actions action=new Actions(driver);
+	action.contextClick((WebElement) By.xpath("//input[@class='sc-dkIYMQ kQRNS search-input']")).keyDown(Keys.ARROW_DOWN).perform();
+	//driver.findElement(By.xpath("//input[@class='sc-dkIYMQ kQRNS search-input']")).sendKeys("40113").;
+	Thread.sleep(1000);
+	
+	findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[7]/button[1]").).click();
+	Thread.sleep(1000);
+	
+	//driver.findElement(By.xpath("(//input[@value='0'])[1]")).sendKeys("1");
+	//driver.findElement(By.xpath("(//input[@value='0'])[2]")).sendKeys("5");
+	
+	
+	
+	
+	
+	
+	}
+
+	private static Actions findElement(By xpath) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

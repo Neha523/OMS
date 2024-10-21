@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.testng.eclipse.launchconfig">
+    <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.testng.remote.RemoteTestNG"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Test"/>
+    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+    <mapAttribute key="org.testng.eclipse.ALL_CLASS_METHODS"/>
+    <listAttribute key="org.testng.eclipse.CLASS_TEST_LIST">
+        <listEntry value="Programs.Addtocart"/>
+        <listEntry value="Programs.Flight"/>
+        <listEntry value="Programs.Partialscrc"/>
+        <listEntry value="Programs.Assignmentwait"/>
+        <listEntry value="Programs.Alerts"/>
+        <listEntry value="Programs.Multipletab"/>
+        <listEntry value="Programs.tsngday1"/>
+        <listEntry value="Programs.login"/>
+        <listEntry value="Programs.Project2"/>
+        <listEntry value="Programs.Locators"/>
+        <listEntry value="Programs.Invokewindows"/>
+        <listEntry value="Locators.LoginLocator"/>
+        <listEntry value="Programs.tab"/>
+        <listEntry value="Programs.Relative"/>
+        <listEntry value="Programs.Scrolling"/>
+        <listEntry value="Programs.Dropdown"/>
+        <listEntry value="Programs.Multiplewindows"/>
+        <listEntry value="Programs.Program1"/>
+        <listEntry value="Programs.Miscellaneous"/>
+        <listEntry value="Programs.LoginOms"/>
+        <listEntry value="Programs.test2"/>
+        <listEntry value="Programs.Brokenlink"/>
+        <listEntry value="Programs.Auto"/>
+        <listEntry value="Programs.testchecklist"/>
+        <listEntry value="Programs.Assignmentdynamic"/>
+        <listEntry value="Programs.link"/>
+        <listEntry value="Programs.blockedsite"/>
+        <listEntry value="Programs.mouseone"/>
+    </listAttribute>
+    <listAttribute key="org.testng.eclipse.METHOD_TEST_LIST"/>
+    <listAttribute key="org.testng.eclipse.PACKAGE_TEST_LIST"/>
+    <stringAttribute key="org.testng.eclipse.PRE_DEFINED_LISTENERS" value=""/>
+    <intAttribute key="org.testng.eclipse.TYPE" value="1"/>
+</launchConfiguration>

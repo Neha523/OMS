@@ -1,0 +1,76 @@
+package Learnframework;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import Abstract.Loginlocators;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import Abstract.Driver;
+
+public class Omslogin  {
+        
+	
+
+	//public WebDriver driver; 
+	
+	/*@BeforeTest
+    public void setup(WebDriver driver) throws IOException
+    {
+    	Properties prop= new Properties();
+        FileInputStream fis=new FileInputStream("C:\\Users\\neha.sharma\\eclipse-workspace\\Learnjava001\\src\\main\\java\\Abstract\\Globaldata.properties");
+        prop.load(fis);
+        if(prop.getProperty("browser").equals("chrome"))
+        {
+        	WebDriverManager.chromedriver().avoidBrowserDetection().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+		    driver = new ChromeDriver(options);
+        }
+        else if (prop.getProperty("browser").equals("firefox"))
+        {
+        	//driver=new FirefoxDriver();
+        }
+        else
+        {
+        	//driver=new EdgeDriver();
+        }
+        
+        driver.get(prop.getProperty("url"));
+    }*/
+
+		@Test
+		public void validlogin() throws IOException
+		{ Driver driver = new Driver();
+		Loginlocators Login=new Loginlocators(driver.InitateBrowser());	
+		Login.loginurl();
+       Login.Login("neha.sharma@medikabazaar.com","Nehasharma@1234");
+       System.out.println(((WebDriver) driver).getTitle());
+       String Expectedresult="PROTA | Getting Started!";
+       Assert.assertEquals(((WebDriver) driver).getTitle(), Expectedresult);
+	}
+	
+		 @Test
+		 public void invalidlogin() throws IOException 
+		 {
+			 Driver driver = new Driver();
+			/* WebDriverManager.chromedriver().avoidBrowserDetection().setup();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--remote-allow-origins=*");
+				WebDriver driver = new ChromeDriver(options);*/
+			 Loginlocators Login=new Loginlocators(driver.InitateBrowser());	
+				Login.loginurl();
+	            Login.Login("neha1.sharma@medikabazaar.com","Nehasharma@1234");
+	            System.out.println(((WebDriver) driver).findElement(By.xpath("//div[@class='alert alert-danger']")).getText()); 
+	       
+		}
+
+}

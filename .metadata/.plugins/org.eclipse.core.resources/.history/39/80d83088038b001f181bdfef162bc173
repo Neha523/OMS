@@ -1,0 +1,26 @@
+package bpbprgm1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class iframe {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://the-internet.herokuapp.com/iframe");
+		driver.switchTo().frame(driver.findElement(By.id("mce_0_ifr")));
+		String text=driver.findElement(By.xpath("//p")).getText();
+		System.out.println(text);
+		
+		
+		
+		
+
+	}
+
+}

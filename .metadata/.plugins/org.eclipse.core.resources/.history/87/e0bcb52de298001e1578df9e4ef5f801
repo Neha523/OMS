@@ -1,0 +1,34 @@
+package Programs;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Assignmentwait {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriverManager.chromedriver().avoidBrowserDetection().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(options);
+		driver.get("https://rahulshettyacademy.com/loginpagePractise/");
+		driver.findElement(By.id("username")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.id("password")).sendKeys("learning");
+		driver.findElement(By.xpath("//label/span[normalize-space()='User']")).click();
+		String alert =driver.switchTo().alert().getText();
+		driver.switchTo().alert().accept();
+		System.out.println(alert);
+		
+	    Select list=new Select(driver.findElement(By.xpath("//select[@class='form-control']")));
+	    list.selectByValue("consult");
+	    
+	    
+
+	}
+
+}

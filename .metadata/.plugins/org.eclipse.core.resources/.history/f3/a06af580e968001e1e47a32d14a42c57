@@ -1,0 +1,28 @@
+package Programs;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Flight {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver(options);
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		driver.findElement(By.id("divpaxinfo")).click();
+		Thread.sleep(2000);
+		
+		for (int i=1;i<5;i++)
+		{
+		driver.findElement(By.xpath("//span[@id='hrefIncAdt'][1]")).click();
+		}
+		driver.findElement(By.xpath("//input[@value='Done']")).click();
+		driver.findElement(By.id("divpaxinfo")).getText();
+	}
+
+}

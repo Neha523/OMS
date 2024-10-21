@@ -1,0 +1,15 @@
+package Learnjava;
+
+public class Inheticancesingle {
+	
+	public static void add()
+	{
+		int a=4;
+		int b=5;
+		int sum = 0;
+		sum=a+b;
+		System.out.println(sum);
+		
+		
+	}
+}

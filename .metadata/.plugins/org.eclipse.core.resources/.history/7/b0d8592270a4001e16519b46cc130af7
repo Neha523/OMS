@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module TestngTutorial {
+	requires junit;
+}

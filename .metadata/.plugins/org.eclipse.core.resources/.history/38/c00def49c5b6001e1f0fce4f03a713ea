@@ -1,0 +1,44 @@
+package Learnjava;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+public class prjt1 {
+
+	
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		WebDriverManager.chromedriver().avoidBrowserDetection().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(options);
+		driver.get("https://rahulshettyacademy.com/client/");
+        driver.findElement(By.id("userEmail")).sendKeys("nehatest1689@gmail.com");
+        driver.findElement(By.id("userPassword")).sendKeys("Testme@123");
+        driver.findElement(By.id("login")).click();
+        driver.manage().window().maximize();
+       Thread.sleep(1000);
+        List<WebElement> a=driver.findElements(By.className("card"));
+        System.out.println(a.size());
+        for (int i=0;i<a.size();i++)
+        {
+        	
+            List<WebElement> b=driver.findElements(By.xpath("(//button[@class='btn w-10 rounded'][normalize-space()='Add To Cart'])"));
+            System.out.println(b.size());
+            System.out.println(b.get(i).getText());
+           // b.get(i).click();
+        //System.out.println(b.gettext(i));
+	}
+
+}}

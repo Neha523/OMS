@@ -1,0 +1,44 @@
+package properties;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Baseproperties {
+	public WebDriver driver;
+	
+	public WebDriver Initializedriver() throws IOException
+	{
+		
+		//properties class
+		Properties prop=new Properties();
+		FileInputStream fis=new FileInputStream("C:\\Users\\neha.sharma\\eclipse-workspace\\Learnjava001\\src\\main\\java\\Abstract\\Globaldata.properties");
+		prop.load(fis);
+		String browsername=prop.getProperty("browser");
+		if (browsername.equalsIgnoreCase("Chrome"))
+		{		
+		WebDriverManager.chromedriver().avoidBrowserDetection().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(options);	
+		}
+		else if(browsername.equalsIgnoreCase("firefox"))
+		{
+			
+		}
+		driver.manage().window().maximize();
+		return driver;
+	}
+	public void Launchapplication() throws IOException
+	{
+		driver=Initializedriver();
+		
+	}
+
+}
